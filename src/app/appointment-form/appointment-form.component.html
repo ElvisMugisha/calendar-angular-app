@@ -1,0 +1,58 @@
+<form [formGroup]="appointmentForm">
+  <mat-form-field>
+    <input
+      matInput
+      type="text"
+      formControlName="title"
+      placeholder="Title"
+      required
+    />
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      [matDatepicker]="picker"
+      type="datetime-local"
+      formControlName="date"
+      placeholder="Date"
+      required
+    />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="time" formControlName="time" placeholder="Time" />
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="addAppointment()">
+    Add Appointment
+  </button>
+</form>
+
+<!-- <form [formGroup]="appointmentForm">
+  <mat-form-field>
+    <input matInput formControlName="title" placeholder="Title" />
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      [matDatepicker]="picker"
+      formControlName="date"
+      placeholder="Date"
+    />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      [matDatepicker]="timepicker"
+      formControlName="time"
+      placeholder="Time"
+    />
+    <mat-datepicker-toggle matSuffix [for]="timepicker"></mat-datepicker-toggle>
+    <mat-datepicker #timepicker></mat-datepicker>
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="addAppointment()">
+    Add Appointment
+  </button>
+</form> -->
